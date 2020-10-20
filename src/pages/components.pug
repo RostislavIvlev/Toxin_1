@@ -1,0 +1,10 @@
+extend ../templates/devtools/devtools
+
+block head
+  title Components
+
+block main
+  .componentsWrapper
+    .componentsColumn
+      +componentBlock({name: "text field", status: "default"})
+        +input({mods: "default", placeholder: "Email"})
