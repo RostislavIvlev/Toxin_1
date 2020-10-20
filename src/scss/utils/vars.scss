@@ -1,2 +1,23 @@
-$montserratBold: 'Montserrat 700', sans-serif;
+//Fonts
 
+$quicksandRegular: 'Conv_Quicksand-Regular', sans-serif;
+$quicksandBold: 'Conv_Quicksand-Bold', "Open Sans Bold", sans-serif;
+$montserratRegular: 'Montserrat 400', sans-serif;
+$montserratBold: 'Montserrat 600', sans-serif;
+$openSans: "Open sans", sans-serif;
+$awesome: "Conv_Font Awesome 5 Brands-Regular-400", sans-serif;
+$materialIcons: 'Conv_MaterialIcons-Regular', sans-serif;
+
+//Colors
+
+$black: #1f2041;
+$black75:  rgba(31, 32, 65, 0.75);
+$black50:  rgba(31, 32, 65, 0.5);
+$black25:  rgba(31, 32, 65, 0.25);
+$black05:  rgba(31, 32, 65, 0.05);
+
+$addition: #BC9CFF;
+$success: #6fcf97;
+
+$buttonGradient: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+$navGradient: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);

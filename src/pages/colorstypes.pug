@@ -1,0 +1,41 @@
+extend ../templates/devtools/devtools
+
+block head
+  title Colors and types
+
+block main
+  .colorsTypesWrapper
+    .colorsWrapper
+
+      -
+        let colors = [
+            {color: "rgba(31, 32, 65, 1);", name: "Dark Shade 100%", code: "#1F2041"},
+            {color: "rgba(31, 32, 65, 0.75);", name: "Dark Shade 75%", code: "#1F2041"},
+            {color: "rgba(31, 32, 65, 0.5);", name: "Dark Shade 50%", code: "#1F2041"},
+            {color: "rgba(31, 32, 65, 0.25);", name: "Dark Shade 25%", code: "#1F2041"},
+            {color: "rgba(31, 32, 65, 0.05);", name: "Dark Shade 05%", code: "#1F2041"},
+            {color: "#BC9CFF", name: "Purple", code: "#BC9CFF"},
+            {color: "#6FCF97", name: "Green", code: "#6FCF97"},
+        ]
+      each element in colors
+        .colorsLine
+          .colorsLine__color(style="background-color:" + element.color)
+          .colorExpand
+            .colorExpand__name= element.name
+            .colorExpand__text= element.code
+
+
+    .typesWrapper
+      
+      -
+        let types = [
+            {name: "H1", text: "This one is the sub-section or widget title", nameClass: "h1", textClass: "h1"},
+            {name: "H2", text: "Next one is the item title inside widgets", nameClass: "h2", textClass: "h2"},
+            {name: "H3", text: "This is a label or CTA text", nameClass: "h3", textClass: "h3"},
+            {name: "Body", text: "This is the body text which is used for most of the design, like paragraphs, lists, etc.", nameClass: "body", textClass: "body"},
+        ]
+      each element in types
+        .typesLine
+          .typesLine__name(class= "typesLine__name_" + element.nameClass)= element.name
+          .typesLine__text(class= "typesLine__text_" + element.textClass)= element.text
+

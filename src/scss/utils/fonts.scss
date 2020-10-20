@@ -1,9 +1,97 @@
+//Fonts here
+
+
+@font-face {
+	font-family: 'Conv_Quicksand-Regular';
+	src: url('/assets/fonts/Quicksand-Regular.eot');
+	src: local('☺'), url('/assets/fonts/Quicksand-Regular.woff') format('woff'),
+	url('/assets/fonts/Quicksand-Regular.ttf') format('truetype'),
+	url('/assets/fonts/Quicksand-Regular.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+@font-face {
+	font-family: 'Conv_Quicksand-Bold';
+	src: url('/assets/fonts/Quicksand-Bold.eot');
+	src: local('☺'), url('/assets/fonts/Quicksand-Bold.woff') format('woff'),
+	url('/assets/fonts/Quicksand-Bold.ttf') format('truetype'),
+	url('/assets/fonts/Quicksand-Bold.svg') format('svg');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Open Sans';
+	src: url('/assets/fonts/OpenSans-Regular.eot');
+	src: local('☺'), url('/assets/fonts/OpenSans.woff') format('woff'),
+	 url('/assets/fonts/OpenSans.ttf') format('truetype'),
+	  url('/assets/fonts/OpenSans.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Open Sans Bold';
+	src: url('/assets/fonts/OpenSans-Bold.eot');
+	src: local('☺'), url('/assets/fonts/OpenSans-Bold.woff') format('woff'),
+	url('/assets/fonts/OpenSans-Bold.ttf') format('truetype'),
+	url('/assets/fonts/OpenSans-Bold.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Montserrat 400';
+	src: url('/assets/fonts/montserrat-400-normal.eot');
+	src: local('☺'), url('/assets/fonts/montserrat-400-normal.woff') format('woff'),
+	url('/assets/fonts/montserrat-400-normal.ttf') format('truetype'),
+	url('/assets/fonts/montserrat-400-normal.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
 @font-face {
 	font-family: 'Montserrat 700';
 	src: url('/assets/fonts/montserrat-700-normal.eot');
 	src: local('☺'), url('/assets/fonts/montserrat-700-normal.woff') format('woff'),
 	url('/assets/fonts/montserrat-700-normal.ttf') format('truetype'),
 	url('/assets/fonts/montserrat-700-normal.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Montserrat 600';
+	src: url('/assets/fonts/montserrat-600-normal.eot');
+	src: local('☺'), url('/assets/fonts/montserrat-600-normal.woff') format('woff'),
+	url('/assets/fonts/montserrat-600-normal.ttf') format('truetype'),
+	url('/assets/fonts/montserrat-600-normal.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+//Material icons
+
+@font-face {
+	font-family: 'Conv_MaterialIcons-Regular';
+	src: url('/assets/fonts/MaterialIcons-Regular.eot');
+	src: local('☺'), url('/assets/fonts/MaterialIcons-Regular.woff') format('woff'),
+	url('/assets/fonts/MaterialIcons-Regular.ttf') format('truetype'),
+	url('/assets/fonts/MaterialIcons-Regular.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+@font-face {
+	font-family: 'Conv_Font Awesome 5 Brands-Regular-400';
+	src: url('/assets/fonts/Font Awesome 5 Brands-Regular-400.eot');
+	src: local('☺'), url('/assets/fonts/Font Awesome 5 Brands-Regular-400.woff') format('woff'),
+	url('/assets/fonts/Font Awesome 5 Brands-Regular-400.ttf') format('truetype'),
+	url('/assets/fonts/Font Awesome 5 Brands-Regular-400.svg') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }

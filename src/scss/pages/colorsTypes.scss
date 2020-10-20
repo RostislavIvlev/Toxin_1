@@ -1,0 +1,106 @@
+@import "../main.scss";
+
+.colorsTypesWrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    margin-left: 15vw;
+    margin-right: 25vw;
+
+    .colorsWrapper {
+        height: 610px;
+        margin-bottom: 60px;
+
+        .colorsLine {
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 20px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            &__color {
+                @include size(70px);
+                border-radius: 6px;
+            }
+
+            .colorExpand {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+
+                margin-left: 40px;
+
+                &__text {
+                    @include fontSettings($quicksandRegular, 19px, 29px, $black);
+                }
+
+                &__name {
+                    @include fontSettings($quicksandBold, 19px, 29px, $black);
+                }
+            }
+
+        }
+    }
+
+    .typesWrapper {
+        margin-left: auto;
+
+        .typesLine {
+            display: flex;
+            margin-bottom: 50px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            &__name {
+                margin-right: 30px;
+                width: 37px;
+                text-align: right;
+
+                &_h1 {
+                    @include fontSettings($montserratRegular, 24px, 30px, $black25);
+                }
+
+                &_h2 {
+                    @include fontSettings($montserratRegular, 19px, 24px, $black25);
+                }
+
+                &_h3 {
+                    @include fontSettings($montserratRegular, 12px, 15px, $black25);
+                }
+
+                &_body {
+                    @include fontSettings($montserratRegular, 14px, 24px, $black25);
+                }
+            }
+
+            &__text {
+
+                &_h1 {
+                    @include fontSettings($quicksandBold, 24px, 30px, $black);
+                    width: 336px;
+                }
+
+                &_h2 {
+                    @include fontSettings($quicksandBold, 19px, 24px, $black);
+                    width: 282px;
+                }
+
+                &_h3 {
+                    @include fontSettings($montserratBold, 12px, 15px, $black);
+
+                }
+
+                &_body {
+                    @include fontSettings($montserratRegular, 14px, 24px, $black75);
+                    width: 305px;
+                }
+            }
+        }
+    }
+}
