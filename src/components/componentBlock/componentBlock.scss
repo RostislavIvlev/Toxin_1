@@ -1,0 +1,26 @@
+@import "../../scss/main.scss";
+
+
+.componentBlock {
+    width: fit-content;
+
+    .componentHeader {
+        display: flex;
+        flex-direction: row;
+
+        margin-bottom: 5px;
+
+
+        &__name {
+            @include fontSettings($montserratBold, 12px, 15px, $black);
+            text-transform: uppercase;
+        }
+
+        &__status {
+            margin-left: auto;
+            @include fontSettings($montserratRegular, 12px, 15px, $black50);
+            text-transform: uppercase;
+            text-align: right;
+        }
+    }
+}
