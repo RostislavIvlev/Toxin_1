@@ -1,3 +1,3 @@
 # Webpack-base
 
-HTML + CSS + JS + JQuery
+PUG + SCSS + JS + JQuery
