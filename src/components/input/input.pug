@@ -1,5 +1,4 @@
 mixin input(options)
-  
   -
     if(typeof(options) === 'undefined') {
       var options = {};
@@ -12,6 +11,21 @@ mixin input(options)
       }
     }
 
+  //- 
+    mods:             - string -      addition modes;
+    subscribe:        - bool   -      if need subscribe arrow;
+    placeholder:      - string -      placeholder;
+    formName:         - string -      name for form and input;
+    formId:           - string -      id for form and input;
+
+    Example: 
+          +input({
+            mods: "subscribe",
+            placeholder: "Email",
+            subscribe: true,
+            formId: "subscribe#1",
+            formName: "subscribe#1"
+          })
 
 
   form.inputWrapper(id= options.formId, name= options.formName)
