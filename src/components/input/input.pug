@@ -1,0 +1,20 @@
+mixin input(options)
+  
+  -
+    if(typeof(options) === 'undefined') {
+      var options = {};
+    }
+    var allMods = '';
+    if (typeof(options) !== "undefined" && options.mods) {
+      var modList = options.mods.split(',');
+      for (var i = 0; i < modList.length; i++) {
+        allMods = allMods + ' inputWrapper__input_' + modList[i].trim();
+      }
+    }
+
+
+
+  form.inputWrapper(id= options.formId, name= options.formName)
+    input.inputWrapper__input(class= allMods, placeholder= options.placeholder)&attributes(attributes)
+    if (options.subscribe === true)
+      button.inputWrapper__subscribe(type="submit", id= options.formId, name= options.formName) arrow_forward

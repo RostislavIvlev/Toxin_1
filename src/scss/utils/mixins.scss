@@ -34,3 +34,11 @@
     background-clip: border-box;
 }
 
+// Text gradient
+
+@mixin text-gradient($dir, $from, $to) {
+  background: -webkit-linear-gradient($dir, $from, $to);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+

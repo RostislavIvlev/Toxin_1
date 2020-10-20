@@ -7,4 +7,10 @@ block main
   .componentsWrapper
     .componentsColumn
       +componentBlock({name: "text field", status: "default"})
-        +input({mods: "default", placeholder: "Email"})
+        +input({placeholder: "Email"})
+
+      +componentBlock({name: "masked text field"})
+        +input({mods: "date", placeholder: "ДД.ММ.ГГГГ"})
+
+      +componentBlock({name: "subscription text field"})
+        +input({mods: "subscribe", placeholder: "Email", subscribe: true, formId: "subscribe#1", formName: "subscribe#1"})

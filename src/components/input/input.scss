@@ -1,0 +1,43 @@
+@import "../../scss/main.scss";
+
+.inputWrapper {
+    position: relative;
+    width: fit-content;
+
+    &__input {
+        @include size(320px, 44px);
+        background-color: #ffffff;
+        border: 1px solid $black25;
+        border-radius: 4px;
+        box-sizing: border-box;
+        @include fontSettings($montserratRegular, 14px, 18px, $black75);
+        padding: 13px 15px 13px 15px;
+        outline: none;
+        
+        &:hover,
+        &:focus {
+            border-color: $black50;
+            color: $black75;
+        }
+
+        &::placeholder {
+            @include fontSettings($montserratRegular, 14px, 18px, $black25);
+        }
+
+        &_subscribe {
+            width: 267px;
+        }
+    }
+
+    &__subscribe {
+        @include size(44px, 44px);
+        @include fontSettings($materialIcons, 24px, 44px, $addition);
+        @include text-gradient(180deg, #bc9cff, #8ba4f9);
+        cursor: pointer;
+        position: absolute;
+        right: 0px;
+        text-align: center;
+        border: 0px;
+        outline: none;
+    }
+}
