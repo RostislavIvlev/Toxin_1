@@ -1,0 +1,31 @@
+mixin button(options)
+  -
+    if(typeof(options) === 'undefined') {
+      var options = {};
+    }
+    var allMods = '';
+    if (typeof(options) !== "undefined" && options.mods) {
+      var modList = options.mods.split(',');
+      for (var i = 0; i < modList.length; i++) {
+        allMods = allMods + ' btn_' + modList[i].trim();
+      }
+    }
+
+  //- 
+    mods:             - string -      addition modes. Multiple modes expample: "mode1,mode2,mode3"
+    arrow:            - bool   -      if need arrow span;
+    btnLabel:         - string -      label on button;
+    formName:         - string -      name for form and input;
+    formId:           - string -      id for form and input;
+
+    Example: 
+          +button({
+              mods: "",
+              btnLabel: "перейти к оплате",
+              arrow: true})(style="width: 320px")
+
+  
+  form.btnWrapper(id= options.formId, name= options.formName)
+    button.btn(class= allMods, id= options.formId, name= options.formName)&attributes(attributes)= options.btnLabel
+    if (options.arrow === true)
+      span.btn__arrow arrow_forward

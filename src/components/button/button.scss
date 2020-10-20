@@ -1,0 +1,50 @@
+@import "../../scss/main.scss";
+
+
+.btnWrapper {
+    position: relative;
+    @include size(fit-content);
+
+    .btn {
+        @include size(99px, 44px);
+        outline: none;
+        border: 0px;
+        border-radius: 22px;
+        background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+
+        @include fontSettings($montserratBold, 12px, 15px, white);
+        text-transform: uppercase;
+
+        &:hover {
+            opacity: 0.5;
+        }
+
+        &_gradBorder {
+            background: linear-gradient(#fff, #fff) padding-box,
+            linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+            border: 2px solid transparent;
+            color: $addition;
+        }
+
+        &_iconLink {
+            @include size(fit-content);
+            border: 0px;
+            background: transparent;
+            border-radius: 0;
+            color: $addition;
+
+            &:hover {
+                color: $black50;
+                opacity: 1;
+            }
+        }
+
+        &__arrow {
+            @include size(44px, 44px);
+            @include fontSettings($materialIcons, 24px, 44px, white);
+            position: absolute;
+            right: 0;
+            pointer-events: none;
+        }
+    }
+}
