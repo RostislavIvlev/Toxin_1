@@ -31,4 +31,4 @@ mixin input(options)
   form.inputWrapper(id= options.formId, name= options.formName)
     input.inputWrapper__input(class= allMods, placeholder= options.placeholder)&attributes(attributes)
     if (options.subscribe === true)
-      button.inputWrapper__subscribe(type="submit", id= options.formId, name= options.formName) arrow_forward
+      button.inputWrapper__subscribe&attributes(options.attr) arrow_forward

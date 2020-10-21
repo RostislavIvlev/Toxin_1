@@ -23,6 +23,7 @@ block main
 
     .componentsColumn
       +componentBlock({name: "checkbox buttons"})
+        p
         +checkbox({
           formId: "checkbox1",
           formName: "checkbox1",
@@ -40,6 +41,27 @@ block main
           formName: "checkbox3",
           label: "Можно пригласить гостей (до 10 человек)"
         })(checked)
+
+      +componentBlock({name: "radio buttons"})(style="margin-top: 20px")
+        +radio([
+          {
+            radioTitle: "Мужчина",
+            inputAttr: {
+              name: "Пол",
+              checked: true,
+            }
+          },
+          {
+            radioTitle: "Женщина",
+            inputAttr: {
+              name: "Пол",
+            },
+            attr: {
+              style: "margin-left: 20px"
+            }
+          }
+        ])
+
 
     .componentsColumn
       .buttonsBlock

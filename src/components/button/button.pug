@@ -26,6 +26,6 @@ mixin button(options)
 
   
   form.btnWrapper(id= options.formId, name= options.formName)
-    button.btn(class= allMods, id= options.formId, name= options.formName)&attributes(attributes)= options.btnLabel
+    button.btn(class= allMods)&attributes(attributes)= options.btnLabel
     if (options.arrow === true)
       span.btn__arrow arrow_forward

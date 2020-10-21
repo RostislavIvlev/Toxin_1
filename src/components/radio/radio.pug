@@ -1,0 +1,14 @@
+//-
+  radioLabel:        - string -         Label for radio
+  radioValue:        - string -         Value for radio
+
+mixin radio(radiobuttons, title)
+  .radioWrapper&attributes(attributes)
+    if (typeof(title) !== 'undefined' && title)
+      .radioWrapper__title= title
+
+    each radio in radiobuttons
+      label.radio&attributes(radio.attr)
+        input.radio__input(type="radio")&attributes(radio.inputAttr)
+        .radio__custom
+      span.radioWrapper__text= radio.radioTitle

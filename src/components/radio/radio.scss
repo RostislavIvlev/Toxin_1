@@ -1,0 +1,72 @@
+@import "../../scss/main.scss";
+
+.radioWrapper {
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+
+    &__text {
+        @include fontSettings($montserratRegular, 14px, 20px, $black50);
+        margin-left: 15px;
+        height: 20px;
+    }
+
+    .radio {
+        height: 20px;
+        width: fit-content;
+        position: relative;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+
+        &__input {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        &__custom {
+            box-sizing: border-box;
+            @include size(20px);
+            border: 1px solid $black25;
+            border-radius: 50%;
+            background: #fff;
+    
+            &:after {
+                content: "";
+                position: absolute;
+                display: none;
+                @include size(12px);
+                border-radius: 10px;
+                margin-top: 3px;
+                margin-left: 3px;
+            }
+        }
+
+        .radio__input:checked ~
+        .radio__custom {
+            border-color: $addition;
+        }
+    
+        .radio__input:checked ~
+        .radio__custom:after {
+            display: block;
+            background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+        }
+    }
+
+    .radio__input:checked ~
+    .radio__custom {
+        border-color: $addition;
+    }
+
+    .radio__input:checked ~
+    .radio__custom:after {
+        display: block;
+        background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    }
+}
