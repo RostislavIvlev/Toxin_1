@@ -1,0 +1,7 @@
+//-
+  likeCount:       - number -       Starting likes count;
+  mode:            - string -       Additional modes;
+
+mixin like(options)
+  a.like-button.like-button__counter(href="#likeThis!" title="Like this!" data-count= options.likeCount class= options.mode ? "like-button_" + options.mode : "")&attributes(attributes)
+    span.like-button__heart

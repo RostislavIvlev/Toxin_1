@@ -4,6 +4,7 @@ let $ = require('jquery');
 import '../node_modules/inputmask/dist/jquery.inputmask.js'
 
 import './components/input/input'
+import './components/like/like'
 
 
 

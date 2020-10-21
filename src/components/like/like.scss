@@ -1,0 +1,69 @@
+@import "../../scss/main.scss";
+
+
+.like-button {
+    @include size(40px, 20px);
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    box-sizing: border-box;
+    background: #fff;
+    background-clip: padding-box;
+    border: solid 1px transparent;
+    border-radius: 10px;
+    color: $black25;
+    outline: 0;
+
+    &:before {
+        content: "";
+        position: absolute;
+        top: 0; right: 0; bottom: 0; left: 0;
+        z-index: -1;
+        margin: -1px;
+        border-radius: inherit;
+        background: $black25;
+        
+    }
+
+    &:active {
+        color: $addition !important; // CHECK
+
+        &:before {
+            background: $buttonGradient;
+        }
+    }
+
+    &_active {
+        color: $addition !important; // CHECK
+
+        &:before {
+            background: $buttonGradient;
+        }
+    }
+
+    &__heart {
+        @include fontSettings($materialIcons, 10px, 9px, inrehit);
+        position: absolute;
+        top: 5px; left: 4px;
+        &:after {
+            content: "favorite_border";
+        }
+    }
+
+    &_active .like-button__heart:after {
+        content: "favorite"
+    }
+
+
+
+    &__counter {
+
+        &:after {
+            @include fontSettings($montserratRegular, 10px, 12px, inrehit);
+            content: attr(data-count);
+            position: absolute;
+            top: 2.5px;
+            left: 20px;
+        }
+    }
+}

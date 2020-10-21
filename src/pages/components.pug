@@ -79,10 +79,14 @@ block main
             mods: "toggle"
         })
 
+      +componentBlock({name: "like button"})
+        +like({likeCount: "11"})
+        +like({likeCount: "2"})
+
 
     .componentsColumn
       .buttonsBlock
-        .buttonsBlock__head  Buttons block        
+        .buttonsBlock__head Buttons block
         .buttonsBlock__content
           +button({mods: "", btnLabel: "click me", formName: "btn1", formId: "btn1"})
           +button({mods: "", btnLabel: "click me", formName: "btn2", formId: "btn2"})
