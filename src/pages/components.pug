@@ -22,21 +22,39 @@ block main
         })
 
     .componentsColumn
+      +componentBlock({name: "checkbox buttons"})
+        +checkbox({
+          formId: "checkbox1",
+          formName: "checkbox1",
+          label: "Можно курить"
+        })
+        p
+        +checkbox({
+          formId: "checkbox2",
+          formName: "checkbox2",
+          label: "Можно c питомцами"
+        })(checked)
+        p
+        +checkbox({
+          formId: "checkbox3",
+          formName: "checkbox3",
+          label: "Можно пригласить гостей (до 10 человек)"
+        })(checked)
 
     .componentsColumn
       .buttonsBlock
         .buttonsBlock__head  Buttons block        
         .buttonsBlock__content
-          +button({mods: "", btnLabel: "click me", formName: "1", formId: "1"})
-          +button({mods: "", btnLabel: "click me", formName: "2", formId: "2"})
-          +button({mods: "gradBorder", btnLabel: "click me", formName: "3", formId: "3"})
-          +button({mods: "gradBorder", btnLabel: "click me", formName: "4", formId: "4"})
-          +button({mods: "iconLink", btnLabel: "click me", formName: "5", formId: "5"})
-          +button({mods: "iconLink", btnLabel: "click me", formName: "6", formId: "6"})
+          +button({mods: "", btnLabel: "click me", formName: "btn1", formId: "btn1"})
+          +button({mods: "", btnLabel: "click me", formName: "btn2", formId: "btn2"})
+          +button({mods: "gradBorder", btnLabel: "click me", formName: "btn3", formId: "btn3"})
+          +button({mods: "gradBorder", btnLabel: "click me", formName: "btn4", formId: "btn4"})
+          +button({mods: "iconLink", btnLabel: "click me", formName: "btn5", formId: "btn5"})
+          +button({mods: "iconLink", btnLabel: "click me", formName: "btn6", formId: "btn6"})
       +button({mods: "",
         btnLabel: "перейти к оплате",
         arrow: true,
-        formName: "7",
-        formId: "7"})(style="width: 320px")
+        formName: "btn7",
+        formId: "btn7"})(style="width: 320px")
           
 

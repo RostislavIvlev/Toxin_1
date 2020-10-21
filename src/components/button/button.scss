@@ -17,6 +17,7 @@
 
         &:hover {
             opacity: 0.5;
+            transition: ease-out 0.5s;
         }
 
         &_gradBorder {

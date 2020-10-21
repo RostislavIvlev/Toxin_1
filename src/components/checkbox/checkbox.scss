@@ -1,0 +1,63 @@
+@import "../../scss/main.scss";
+
+.checkboxWrapper {
+    display: flex;
+    flex-direction: row;
+    @include size(fit-content);
+    min-width: 20px;
+    min-height: 20px;
+
+    .checkbox {
+        display: block;
+        position: relative;
+        cursor: pointer;
+        
+        &__input {
+            position: absolute;
+            opacity: 0;
+            display: none;
+        }
+
+        &__custom {
+            position: absolute;
+            top: 0;
+            left: 0;
+            border: 2px solid $black25;
+            border-radius: 4px;
+            @include size(20px);
+            box-sizing: border-box;
+
+            &:after {
+                content: "";
+                display: none;
+                margin: auto;
+                width: 11px;
+                height: 11px;
+            }
+        }
+
+
+        .checkbox__input:checked ~
+        .checkbox__custom:after {
+            display: block;
+            content: "";
+            background-image: url("/assets/images/check.svg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: 0px 0px;
+
+        }
+
+        .checkbox__input:checked ~
+        .checkbox__custom {
+            border: 2px solid $addition;
+        }
+    }
+
+    .label {
+        margin-left: 30px;
+        height: 20px;
+        max-width: 192px;
+        @include fontSettings($montserratRegular, 14px, 20px, $black50);
+    }
+}

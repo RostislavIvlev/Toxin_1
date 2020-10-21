@@ -1,0 +1,33 @@
+mixin checkbox(options)
+
+  //- 
+    mods:             - string -      addition modes. Multiple modes expample: "mode1,mode2,mode3"
+    formName:         - string -      name for form and checkbox;
+    formId:           - string -      id for form and checkbox;
+    label:            - string -      label for checkbox
+
+    Example: 
+          +checkbox({
+            formId: "checkbox3",
+            formName: "checkbox3",
+            label: "Можно пригласить гостей (до 10 человек)"
+          })(checked)
+  -
+    if(typeof(options) === 'undefined') {
+      var options = {};
+    }
+    var allMods = '';
+    if (typeof(options) !== "undefined" && options.mods) {
+      var modList = options.mods.split(',');
+      for (var i = 0; i < modList.length; i++) {
+        allMods = allMods + ' checkbox_' + modList[i].trim();
+      }
+    }
+
+
+  .checkboxWrapper
+    label.checkbox(id= options.formId, name= options.formName)
+      input.checkbox__input(type="checkbox", id= options.formId, name= options.formName)&attributes(attributes)
+      span.checkbox__custom
+    if (options.label != null)
+      span.label= options.label
