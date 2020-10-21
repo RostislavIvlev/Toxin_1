@@ -20,7 +20,7 @@ mixin checkbox(options)
     if (typeof(options) !== "undefined" && options.mods) {
       var modList = options.mods.split(',');
       for (var i = 0; i < modList.length; i++) {
-        allMods = allMods + ' checkbox_' + modList[i].trim();
+        allMods = allMods + ' checkbox__custom_' + modList[i].trim();
       }
     }
 
@@ -28,6 +28,9 @@ mixin checkbox(options)
   .checkboxWrapper
     label.checkbox(id= options.formId, name= options.formName)
       input.checkbox__input(type="checkbox", id= options.formId, name= options.formName)&attributes(attributes)
-      span.checkbox__custom
+      span.checkbox__custom(class= allMods)
     if (options.label != null)
-      span.label= options.label
+      if (options.mods.indexOf("toggle") != -1)
+        span.label(style="margin-left: 50px")= options.label
+      else
+        span.label= options.label

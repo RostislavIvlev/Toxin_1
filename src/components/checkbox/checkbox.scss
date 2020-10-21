@@ -20,25 +20,45 @@
 
         &__custom {
             position: absolute;
-            top: 0;
-            left: 0;
-            border: 2px solid $black25;
-            border-radius: 4px;
-            @include size(20px);
-            box-sizing: border-box;
 
-            &:after {
-                content: "";
-                display: none;
-                margin: auto;
-                width: 11px;
-                height: 11px;
+            &_checkbox {
+                border: 2px solid $black25;
+                border-radius: 4px;
+                @include size(20px);
+                box-sizing: border-box;
+
+                &:after {
+                    content: "";
+                    display: none;
+                    margin: auto;
+                    width: 11px;
+                    height: 11px;
+                }
+            }
+            
+            &_toggle {
+                @include size(40px, 20px);
+                border: 1px solid $black25;
+                border-radius: 10px;
+                box-sizing: border-box;
+
+                &:after {
+                    content: '';
+                    position: absolute;
+                    top: 3px;
+                    left: 3px;
+                    z-index: 1;
+                    @include size(12px);
+                    border-radius: 50%;
+                    background: $black25;
+                    transition: all 0.5s ease;
+                }
             }
         }
 
 
         .checkbox__input:checked ~
-        .checkbox__custom:after {
+        .checkbox__custom_checkbox:after {
             display: block;
             content: "";
             background-image: url("/assets/images/check.svg");
@@ -49,15 +69,26 @@
         }
 
         .checkbox__input:checked ~
-        .checkbox__custom {
+        .checkbox__custom_checkbox {
             border: 2px solid $addition;
+        }
+
+        .checkbox__input:checked ~
+        .checkbox__custom_toggle:after {
+            left: 23px;
+            background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%); 
+        }
+
+        .checkbox__input:checked ~
+        .checkbox__custom_toggle {
+            border-color: $addition;
         }
     }
 
     .label {
         margin-left: 30px;
         height: 20px;
-        max-width: 192px;
+        max-width: 210px;
         @include fontSettings($montserratRegular, 14px, 20px, $black50);
     }
 }

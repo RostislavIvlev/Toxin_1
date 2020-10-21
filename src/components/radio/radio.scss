@@ -27,6 +27,7 @@
             left: 0;
             opacity: 0;
             pointer-events: none;
+            display: none;
         }
 
         &__custom {
@@ -45,17 +46,6 @@
                 margin-top: 3px;
                 margin-left: 3px;
             }
-        }
-
-        .radio__input:checked ~
-        .radio__custom {
-            border-color: $addition;
-        }
-    
-        .radio__input:checked ~
-        .radio__custom:after {
-            display: block;
-            background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
         }
     }
 

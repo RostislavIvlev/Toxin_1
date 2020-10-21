@@ -27,19 +27,22 @@ block main
         +checkbox({
           formId: "checkbox1",
           formName: "checkbox1",
-          label: "Можно курить"
+          label: "Можно курить",
+          mods: "checkbox"
         })
         p
         +checkbox({
           formId: "checkbox2",
           formName: "checkbox2",
-          label: "Можно c питомцами"
+          label: "Можно c питомцами",
+          mods: "checkbox"
         })(checked)
         p
         +checkbox({
           formId: "checkbox3",
           formName: "checkbox3",
-          label: "Можно пригласить гостей (до 10 человек)"
+          label: "Можно пригласить гостей (до 10 человек)",
+          mods: "checkbox"
         })(checked)
 
       +componentBlock({name: "radio buttons"})(style="margin-top: 20px")
@@ -61,6 +64,20 @@ block main
             }
           }
         ])
+
+      +componentBlock({name: "toggle"})
+        +checkbox({
+            formId: "toggle",
+            formName: "toggle",
+            label: "Получать спецпредложения",
+            mods: "toggle"
+        })(checked)
+        +checkbox({
+            formId: "toggle",
+            formName: "toggle",
+            label: "Получать спецпредложения",
+            mods: "toggle"
+        })
 
 
     .componentsColumn
