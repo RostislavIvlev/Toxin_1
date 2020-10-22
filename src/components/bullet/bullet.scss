@@ -1,0 +1,23 @@
+@import "../../scss/main.scss";
+
+.bulletWrapper {
+    
+    .bulletLine {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 10px;
+
+        &__bullet {
+            @include size(10px);
+            border-radius: 50%;
+            background: $black25;
+            margin-right: 10px;
+        }
+
+        &__text {
+            @include fontSettings($montserratRegular, 14px, 24px, $black75);
+            max-width: 240px;
+        }
+    }
+}
