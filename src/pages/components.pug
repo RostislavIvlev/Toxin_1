@@ -81,11 +81,12 @@ block main
         })
 
       +componentBlock({name: "like button"})
-        +like({likeCount: "11"})(style="margin-right: 10px")
+        +like({likeCount: "12", mode: "active"})(style="margin-right: 10px")
         +like({likeCount: "2"})
 
       +componentBlock({name: "rate button"})
         +rating(4)
+        +rating(5)
 
 
     .componentsColumn
@@ -103,5 +104,7 @@ block main
         arrow: true,
         formName: "btn7",
         formId: "btn7"})(style="width: 320px")
-          
+
+      +componentBlock({name: "pagination"})(style="margin-top: 30px")
+        +pagination(4, 1, 15, arrows, "1 – 12 из 100+ вариантов аренды")
 

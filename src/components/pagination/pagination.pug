@@ -1,0 +1,28 @@
+mixin pagination(amount, active, last, arrows, label)
+    //- amount - amount of displayed numbers +1 prior ellipsis
+    //- active - active number
+    //- last - number after ellipsis
+    //- label - label after pagination
+    //- Use example
+    //- +pagination(4, 1, 15, arrows, "This will work!")
+
+    .paginationWrapper    
+      .pagination
+        //- before ellipsis
+        - for (var index = 1; index <= amount; index++)
+            if (index === active)
+              a(href="#pageNumber").pagination__item.pagination__item_active= index
+            else if (index === amount)
+              a(href="#pageNumber").pagination__item ...
+            else
+              a(href="#pageNumber").pagination__item= index
+
+        a(href="#").pagination__item= last
+                  
+        if (arrows === arrows)
+            a(href="#pageNumber" title="Next page").pagination__item.pagination__item_arrow arrow_forward
+
+      br
+      .paginationLabel= label
+
+

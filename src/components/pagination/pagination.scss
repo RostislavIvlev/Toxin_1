@@ -1,0 +1,40 @@
+@import "../../scss/main.scss";
+
+.paginationWrapper {
+    width: 241px;
+    height: 106px;
+    
+    
+    .pagination {
+        display: flex;
+        @include fontSettings($montserratBold, 14px, 15px, $black50);
+
+            &__item {
+                color: $black50;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                @include size(40px);
+                border-radius: 50%;
+                text-decoration: none;
+
+
+                &_active {
+                    color: #fff;
+                    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+
+                }
+
+                &_arrow {     
+                    background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+                    @include fontSettings($materialIcons, 24px, 24px, #fff)
+                }
+            }
+    }
+
+    .paginationLabel {
+        @include fontSettings($montserratRegular, 14px, 24px, $black75);
+        margin-top: -10px;   //!Fix that!
+        padding-left: 4px;   //!Fix that!
+    }
+}
