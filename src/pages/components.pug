@@ -34,6 +34,20 @@ block main
         },
       ])
 
+
+      +expandableList("expandable list")
+        block content
+          +checkbox({label: "Завтрак", mods: "checkbox"})
+          +checkbox({label: "Письменный стол", mods: "checkbox"})(checked)
+          +checkbox({label: "Стул для кормления", mods: "checkbox"})(checked)
+          +checkbox({label: "Кроватка", mods: "checkbox"})(checked)
+          +checkbox({label: "Телевизор", mods: "checkbox"})(checked)
+          +checkbox({label: "Шампунь", mods: "checkbox"})
+          
+      +expandableList("expandable list")
+        block content2
+          +checkbox({label: "Завтрак", mods: "checkbox"})
+
     .componentsColumn
       +componentBlock({name: "checkbox buttons"})
         p
@@ -43,14 +57,12 @@ block main
           label: "Можно курить",
           mods: "checkbox"
         })
-        p
         +checkbox({
           formId: "checkbox2",
           formName: "checkbox2",
           label: "Можно c питомцами",
           mods: "checkbox"
         })(checked)
-        p
         +checkbox({
           formId: "checkbox3",
           formName: "checkbox3",
@@ -85,7 +97,6 @@ block main
             label: "Получать спецпредложения",
             mods: "toggle"
         })(checked)
-        p
         +checkbox({
             formId: "toggle",
             formName: "toggle",

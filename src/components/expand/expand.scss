@@ -1,0 +1,35 @@
+@import "../../scss/main.scss";
+
+.expandableList {
+    max-width: 266px;
+
+    .expandableHeader {
+        display: flex;
+        flex-direction: row;
+        line-height: 24px;
+        margin-bottom: 20px;
+
+        &__name {
+            @include fontSettings($montserratBold, 12px, 24px, $black);
+            margin-left: 0;
+            margin-right: auto;
+            text-transform: uppercase;
+        }
+
+        &__arrow {
+            @include fontSettings($materialIcons, 24px, 24px, $black50);
+
+            &_expanded {
+                transform: rotate(-180deg);
+            }
+        }
+    }
+
+    .expandableContent {
+        display: none;
+
+        &_expanded {
+            display: block;
+        }
+    }
+}

@@ -1,0 +1,8 @@
+mixin expandableList(name)
+
+  .expandableList&attributes(attributes)
+    .expandableHeader
+      .expandableHeader__name= name
+      .expandableHeader__arrow expand_more
+    .expandableContent
+      block
