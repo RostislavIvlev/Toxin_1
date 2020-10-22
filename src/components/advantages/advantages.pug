@@ -1,0 +1,10 @@
+mixin advantages(advantages)
+
+  .advantagesWrapper
+    each element in advantages
+      .advantage
+        .advantage__icon= element.icon
+        .advantageText
+          .advantageText__name= element.name
+          .advantageText__text= element.text
+      hr.advantagesWrapper__hr

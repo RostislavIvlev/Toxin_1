@@ -1,0 +1,43 @@
+@import "../../scss/main.scss";
+
+.advantagesWrapper {
+    display: flex;
+    flex-direction: column;
+
+    width: fit-content;
+
+    .advantage {
+        display: flex;
+        flex-direction: row;
+
+        &__icon {
+            @include fontSettings($materialIcons, 48px, 48px, $addition);
+            @include text-gradient(180deg, #bc9cff, #8ba4f9);
+        }
+
+        .advantageText {
+            margin-left: 10px;
+            height: 48px;
+
+            &__name {
+                @include fontSettings($montserratBold, 14px, 24px, $black75);
+                margin-bottom: auto;
+                margin-top: 0;
+            }
+
+            &__text {
+                @include fontSettings($montserratRegular, 14px, 24px, $black75);
+                margin-bottom: 0;
+                margin-top: auto;
+            }
+        }
+    }
+
+    &__hr {
+        width: 110%;
+        margin-top: 17px;
+        margin-bottom: 20px;
+        margin-left: 0px;
+        border: 0.5px solid rgba(31, 32, 65, 0.1);
+    }
+}

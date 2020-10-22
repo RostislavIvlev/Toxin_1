@@ -34,7 +34,6 @@
 
     .paginationLabel {
         @include fontSettings($montserratRegular, 14px, 24px, $black75);
-        margin-top: -10px;   //!Fix that!
-        padding-left: 4px;   //!Fix that!
+        margin-top: 10px;
     }
 }

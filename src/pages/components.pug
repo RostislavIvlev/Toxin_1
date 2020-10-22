@@ -20,6 +20,19 @@ block main
           formId: "subscribe#1",
           formName: "subscribe#1"
         })
+      
+      +advantages([
+        {
+          icon: "insert_emoticon",
+          name: "Комфорт",
+          text: "Шумопоглощающие стены"
+        },
+        {
+          icon: "location_city",
+          name: "Удобство",
+          text: "Окно в каждой из спален"
+        },
+      ])
 
     .componentsColumn
       +componentBlock({name: "checkbox buttons"})
@@ -107,4 +120,3 @@ block main
 
       +componentBlock({name: "pagination"})(style="margin-top: 30px")
         +pagination(4, 1, 15, arrows, "1 – 12 из 100+ вариантов аренды")
-
