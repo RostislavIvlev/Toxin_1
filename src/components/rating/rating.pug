@@ -1,0 +1,15 @@
+//-
+   selected1          - string -        : If selected 1 stars
+   selected2          - string -        : If selected 2 stars
+   selected3          - string -        : If selected 3 stars
+   selected4          - string -        : If selected 4 stars
+   selected5          - string -        : If selected 5 stars
+
+mixin rating(selected)
+  
+  select.rating&attributes(attributes)
+    each val, key in {1: selected, 2: selected, 3: selected, 4: selected, 5: selected}
+      if key == val 
+        option(value = key selected= "selected") key
+      else 
+        option(value = key) key

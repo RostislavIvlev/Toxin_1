@@ -72,6 +72,7 @@ block main
             label: "Получать спецпредложения",
             mods: "toggle"
         })(checked)
+        p
         +checkbox({
             formId: "toggle",
             formName: "toggle",
@@ -80,8 +81,11 @@ block main
         })
 
       +componentBlock({name: "like button"})
-        +like({likeCount: "11"})
+        +like({likeCount: "11"})(style="margin-right: 10px")
         +like({likeCount: "2"})
+
+      +componentBlock({name: "rate button"})
+        +rating(4)
 
 
     .componentsColumn
