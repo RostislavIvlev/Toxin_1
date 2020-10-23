@@ -1,0 +1,12 @@
+mixin comment(options)
+  .commentWrapper
+    .commentInfo
+      img.commentInfo__img&attributes(attributes)
+      .info
+        .info__name= options.name
+        .info__lastOnline= options.lastOnline
+    .commentBlock
+      .commentBlock__like
+        +like({likeCount: options.likeCount, mode: "active"})
+      .commentBlock__text
+        block

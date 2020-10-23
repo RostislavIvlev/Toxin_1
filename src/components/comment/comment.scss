@@ -1,0 +1,52 @@
+@import "../../scss/main.scss";
+
+.commentWrapper {
+
+    .commentInfo {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 12px;
+
+        .info {
+            display: flex;
+            flex-direction: column;
+            margin-left: 10px;
+
+            &__name {
+                @include fontSettings($montserratBold, 14px, 24px, $black75);
+                margin-top: 0;
+                margin-bottom: auto;
+            }
+
+            &__lastOnline {
+                @include fontSettings($montserratRegular, 14px, 24px, $black75);
+                margin-top: auto;
+                margin-bottom: 0;
+            }
+        }
+
+        &__img {
+            @include size(48px);
+            border: 2px solid #ffffff;
+            box-sizing: border-box;
+            filter: drop-shadow(0px 10px 20px rgba(31, 32, 65, 0.1));
+            border-radius: 32px;
+        }
+    }
+
+    .commentBlock {
+        display: flex;
+        flex-direction: row;
+
+        &__like {
+            margin-left: 4px;
+            margin-right: 14px;
+            margin-top: 5px;
+        }
+
+        &__text {
+            max-width: 658px;
+            @include fontSettings($montserratRegular, 14px, 24px, $black75);
+        }
+    }
+}

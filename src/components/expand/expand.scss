@@ -18,6 +18,8 @@
 
         &__arrow {
             @include fontSettings($materialIcons, 24px, 24px, $black50);
+            cursor: pointer;
+            user-select:none;
 
             &_expanded {
                 transform: rotate(-180deg);
