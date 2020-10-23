@@ -4,13 +4,15 @@
     display: flex;
     flex-direction: row;
     @include size(fit-content);
-    height: 20px;
+    height: fit-content;
     margin-bottom: 10px;
 
     .checkbox {
         display: block;
         position: relative;
         cursor: pointer;
+
+        
         
         &__input {
             position: absolute;
@@ -89,5 +91,21 @@
         height: 20px;
         max-width: 210px;
         @include fontSettings($montserratRegular, 14px, 20px, $black50);
+    }
+
+    .checkboxRich {
+        display: flex;
+        flex-direction: column;
+        margin-left: 30px;
+
+        &__name {
+            @include fontSettings($montserratBold, 14px, 18px, $black75);
+            margin-bottom: 5px;
+        }
+
+        &__text {
+            width: 236px;
+            @include fontSettings($montserratRegular, 12px, 14px, $black50);
+        }
     }
 }

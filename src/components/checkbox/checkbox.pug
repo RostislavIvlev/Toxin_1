@@ -5,6 +5,7 @@ mixin checkbox(options)
     formName:         - string -      name for form and checkbox;
     formId:           - string -      id for form and checkbox;
     label:            - string -      label for checkbox
+    name:             - string -      name for rich checkbox
 
     Example: 
           +checkbox({
@@ -29,6 +30,10 @@ mixin checkbox(options)
     label.checkbox(id= options.formId, name= options.formName)
       input.checkbox__input(type="checkbox", id= options.formId, name= options.formName)&attributes(attributes)
       span.checkbox__custom(class= allMods)
+    if (options.name != null)
+      .checkboxRich
+        .checkboxRich__name= options.name
+        .checkboxRich__text= options.text
     if (options.label != null)
       if (options.mods.indexOf("toggle") != -1)
         span.label(style="margin-left: 50px")= options.label
