@@ -29,7 +29,7 @@ $("[data-fast]").on("click", function() {
     let curr = $(this).closest(".dropdownContent").find(".contentLine__current");
     let name = "";
     curr.each(function(index, element){
-        let currentName = $(element).attr("data-name") + " " + $(element).attr("data-current") + "," + " ";
+        let currentName = $(element).attr("data-current") + " " + $(element).attr("data-name").toLowerCase() + "," + " ";
         name += currentName;
     });
 
