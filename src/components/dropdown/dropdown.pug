@@ -1,15 +1,21 @@
-mixin dropdown(dropdownContent, placeholder, buttons)
+mixin dropdown(dropdownContent, value, buttons)
   .dropdownWrapper
-    input.dropdown(type="input", placeholder= placeholder)&attributes(attributes)
+    input.dropdown(type="input", value= value, readonly)&attributes(attributes)
     span.dropdownWrapper__arrow expand_more
 
-    .dropdownContent.dropdownContent_expanded
+    .dropdownContent
       each element in dropdownContent
         .contentLine
           .contentLine__name= element.name
-          .contentLine__button.contentLine__button_minus -
+          if (buttons !== true)
+            .contentLine__button.contentLine__button(data-minus data-fast) -
+          else
+            .contentLine__button.contentLine__button(data-minus) -
           .contentLine__current(data-current= element.current, data-name= element.name, data-base= element.current)
-          .contentLine__button.contentLine__button_plus +
+          if (buttons !== true)
+            .contentLine__button.contentLine__button(data-plus data-fast) +
+          else
+            .contentLine__button.contentLine__button(data-plus) +
 
       if (buttons === true)
         .buttonsLine
