@@ -25,7 +25,7 @@ mixin button(options)
               arrow: true})(style="width: 320px")
 
   
-  form.btnWrapper(id= options.formId, name= options.formName)
+  .btnWrapper(id= options.formId, name= options.formName)
     button.btn(class= allMods)&attributes(attributes)= options.btnLabel
     if (options.arrow === true)
       span.btn__arrow arrow_forward

@@ -1,0 +1,17 @@
+mixin dropdown(dropdownContent, placeholder, buttons)
+  .dropdownWrapper
+    input.dropdown(type="input", placeholder= placeholder)&attributes(attributes)
+    span.dropdownWrapper__arrow expand_more
+
+    .dropdownContent.dropdownContent_expanded
+      each element in dropdownContent
+        .contentLine
+          .contentLine__name= element.name
+          .contentLine__button.contentLine__button_minus -
+          .contentLine__current(data-current= element.current, data-name= element.name, data-base= element.current)
+          .contentLine__button.contentLine__button_plus +
+
+      if (buttons === true)
+        .buttonsLine
+          +button({mods: "iconLink", btnLabel: "Очистить"})(style="margin-left: 0; margin-right: auto;", data-clear)
+          +button({mods: "iconLink", btnLabel: "Принять"})(style="margin-left: 144px; margin-right: 0;", data-submit)

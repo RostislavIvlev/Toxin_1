@@ -48,6 +48,40 @@ block main
         block content2
           +checkbox({label: "Завтрак", mods: "checkbox"})
 
+      +componentBlock({name: "dropdown"})(style="margin-top: 20px;")
+        +dropdown([
+          {
+            name: "Взрослые",
+            current: "0"
+          },
+          {
+            name: "Дети",
+            current: "1"
+          },
+          {
+            name: "Младенцы",
+            current: "2"
+          }
+        ], "Сколько гостей", true)
+
+      +componentBlock({name: "dropdown"})(style="margin-top: 20px;")
+        +dropdown([
+          {
+            name: "Взрослые",
+            current: "1"
+          },
+          {
+            name: "Дети",
+            current: "1"
+          },
+          {
+            name: "Младенцы",
+            current: "1"
+          }
+        ], "Сколько гостей",true)
+
+
+
     .componentsColumn
       +componentBlock({name: "checkbox buttons"})
         p
