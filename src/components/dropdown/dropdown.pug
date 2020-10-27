@@ -2,6 +2,7 @@ mixin dropdown(dropdownContent, value, buttons)
   .dropdownWrapper
     input.dropdown(type="input", value= value, readonly)&attributes(attributes)
     span.dropdownWrapper__arrow expand_more
+    
 
     .dropdownContent
       each element in dropdownContent

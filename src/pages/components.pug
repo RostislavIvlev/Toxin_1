@@ -34,6 +34,16 @@ block main
         },
       ])
 
+      +componentBlock({name: "datepicker"})(style="margin-top: 30px;")
+        div(style="display: flex")
+          +datepicker()#startDate(data-range="true" data-multiple-dates-separator=" - " placeholder= "ДД.ММ.ГГГГ")
+          +datepicker()#endDate(style="margin-left: 20px" data-range="true" data-multiple-dates-separator=" - " placeholder= "ДД.ММ.ГГГГ")
+
+      +componentBlock({name: "datepicker"})(style="margin-top: 30px;")
+        +datepicker()#filterDatePicker(style="width: 266px" data-range="true" data-multiple-dates-separator=" - " placeholder= "ДД.ММ.ГГГГ")
+
+
+
 
       +expandableList("expandable list")
         block content
@@ -79,9 +89,7 @@ block main
             current: "0"
           }
         ], "Сколько гостей", false)(style="width: 266px")
-
-
-
+ 
     .componentsColumn
       +componentBlock({name: "checkbox buttons"})
         p

@@ -1,0 +1,167 @@
+@import "../../scss/main.scss";
+
+.datepickerWrapper {
+    position: relative;
+    width: fit-content;
+
+    &__input {
+        @include size(150px, 44px);
+        box-sizing: border-box;
+        border: 1px solid $black25;
+        border-radius: 4px;
+        outline: none;
+        padding-left: 15px;
+        padding-right: 45px;
+        @include fontSettings($montserratRegular, 14px, 44px, $black75);
+        user-select: none;
+        cursor: pointer;
+    }
+
+    &__arrow {
+        @include size(44px);
+        @include fontSettings($materialIcons, 24px, 44px, $black50);
+        text-align: center;
+        position: absolute;
+        right: 0;
+        cursor: pointer;
+        user-select: none;
+        pointer-events: none;
+
+        &_expanded {
+            transform: rotate(180deg);
+        }
+    }
+}
+
+.nav-arrow {
+    @include fontSettings($materialIcons, 24px, 20px, $addition);
+    padding: 20px;
+}
+
+.datepicker {
+    @include size(320px, 369px);
+    box-sizing: border-box;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+    padding: 20px;
+
+    .datepicker--nav {
+        border-bottom: 0px;
+        padding: 0px;
+    
+        &-title {
+            @include fontSettings($quicksandBold, 19px, 24px, $black);
+            height: 24px;
+        }
+
+        &-action {
+            @include size(20px);
+        }
+    }
+
+    &--day-name {
+        @include fontSettings($montserratBold, 12px, 15px, $addition);
+        text-transform: none;
+        @include size(40px);
+        margin-top: 10px;
+        margin-bottom: -5px //for pixel-perfect;
+    }
+
+
+    &--cell {
+        height: 40px;
+        @include fontSettings($montserratRegular, 12px, 15px, $black50);
+
+        &.-focus- {
+            background: $addition;
+            opacity: 0.5;
+        }
+        
+        &.-current- {
+            background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+            border-radius: 50%;
+            color: #fff !important;
+        } 
+
+        &.-range-from-,
+        &.-range-to- {
+            
+            background-color: #EAE1FF;
+            position: relative;
+
+        }
+
+        &.-range-from- {
+            border-top-left-radius: 55%;
+            border-bottom-left-radius: 55%;
+
+            &:before {
+                content: "";
+                position: absolute;
+                left: 0px;
+                height: 39px;
+                width: 38px;
+                background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+                border-radius: 50%;
+                z-index: -1;    
+            }
+        }
+
+        &.-range-to- {
+            border-top-right-radius: 55%;
+            border-bottom-right-radius: 55%;
+
+            &:before {
+                content: "";
+                position: absolute;
+                left: 0px;
+                height: 39px;
+                width: 38px;
+                background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+                border-radius: 50%;
+                z-index: -1;    
+            }
+        }
+
+        &.-in-range- {
+            background-color: #EAE1FF;
+            color: $black50;
+        }
+
+        .-current- + .-in-range- {
+            border-radius: none;
+        }
+    }
+
+    &--buttons {
+        border-top: none;
+        margin-top: 18px;
+        padding: 0px;
+
+        .datepicker--button {
+            display: block;
+            @include size(fit-content, fit-content);
+            @include fontSettings($montserratBold, 12px, 15px, $black50);
+            text-transform: uppercase;
+            margin-right: auto;
+            margin-left: auto;
+
+            &:hover {
+                background-color: transparent;
+            }
+        }
+    }
+
+    &--ready {
+        border: none;
+        background: transparent;
+        @include size(auto, auto);
+        @include fontSettings($montserratBold, 12px, 15px, $addition);
+        text-transform: uppercase;
+        position: absolute;
+        bottom: 18px;
+        right: 15px;
+    }
+
+
+}
