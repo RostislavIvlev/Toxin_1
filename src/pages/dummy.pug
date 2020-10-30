@@ -1,0 +1,10 @@
+extend ../templates/devtools/devtools
+
+block head
+  title Dummy page
+
+block main
+  
+  div(style="display: flex; flex-direction: column; align-items: center; justify-content: center")
+    span Ссылка работает!
+    a(href="#" onclick="history.back();") Нажмите тут, чтобы вернуться назад

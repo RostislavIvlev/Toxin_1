@@ -1,0 +1,75 @@
+@import "../../../scss/main.scss";
+
+.header {
+    @include size(100vw, 70px);
+    background-color: #FFFFFF;
+    box-sizing: border-box;
+    padding-left: 10%;
+    padding-right: 10%;
+    display: flex;
+    align-items: center;
+
+    &__logo {
+        height: 39px;  //for vertical center
+        margin-left: 0;
+        margin-right: auto;
+        cursor: pointer;
+    }
+
+
+    .navWrapper {
+        display: flex;
+
+        .navElement {
+            @include fontSettings($montserratRegular, 14px, 24px, $black50);
+            margin-right: 20px;
+            outline: none;
+            text-decoration: none;
+            position: relative; 
+            
+            &_bold {
+                @include fontSettings($montserratBold, 14px, 24px, $black75);
+            }
+
+            .navHead {
+                display: flex;
+                cursor: pointer;
+                user-select: none;
+
+                &__arrow {
+                    @include size(24px);
+                    @include fontSettings($materialIcons, 24px, 24px, $black50);
+                    
+                    &_expanded {
+                        transform: rotate(180deg);
+                    }
+                }
+            }
+
+            .navContainer {
+                display:  none;
+                padding: 10px 20px 10px 20px;
+                @include size(150px, auto);
+                border: 1px solid $black05;
+                border-bottom-left-radius: 6px;
+                border-bottom-right-radius: 6px;
+                background-color: #ffffff;
+                position: absolute;
+                top: 24px;
+                right: 0px;
+                z-index: 1;
+
+                &_expanded {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-end;
+                }
+
+                &__element {
+                    margin-top: 10px;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}

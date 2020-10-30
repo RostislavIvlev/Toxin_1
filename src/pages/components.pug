@@ -168,7 +168,10 @@ block main
 
 
     .componentsColumn
-      .buttonsBlock
+
+      +range()
+
+      .buttonsBlock(style="margin-top: 30px")
         .buttonsBlock__head Buttons block
         .buttonsBlock__content
           +button({mods: "", btnLabel: "click me", formName: "btn1", formId: "btn1"})
