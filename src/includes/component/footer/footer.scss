@@ -21,17 +21,15 @@
             display: flex;
             flex-direction: column;
 
+            &_logo {
+                display: block
+            }
+
             &__element {
                 @include fontSettings($montserratRegular, 14px, 14px, $black75);
                 margin-bottom: 15px;
                 outline: none;
                 text-decoration: none;
-
-                &:hover {
-                    text-decoration: underline;
-                    text-decoration-color: $addition;
-                    text-decoration-thickness: 3px;
-                }
                 
                 &:last-child {
                     margin-bottom: 0;
@@ -86,6 +84,53 @@
                 &:last-child {
                     margin-right: 0;
                 }
+            }
+        }
+    }
+
+    @media screen and (max-width: 800px) {
+        width: 100vw;
+        padding-top: 30px;
+        padding-bottom: 30px;
+
+        .footerInfo {
+            padding-top: 0;
+            padding-bottom: 0;
+            margin-bottom: 20px;
+            .footerContent {
+                display: none;
+                
+                &_logo {
+                    display: block;
+                    margin-bottom: 0;
+                }
+
+                &_logo > 
+                .footerContent__element:last-child {
+                    display: none;
+                }
+
+            }
+        }
+
+        &__hr {
+            display: none;
+        }
+
+        .footerCopyright {
+            flex-direction: column;
+            margin-top: 0;
+            padding-bottom: 60px;
+
+            &__elem {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .copyrightSocials {
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 20px;
             }
         }
     }
