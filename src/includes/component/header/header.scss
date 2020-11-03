@@ -80,6 +80,10 @@
         }
     }
 
+    .headerButtons {
+        display: flex;
+    }
+
 
 
     
@@ -90,6 +94,7 @@
             position: relative;
             cursor: pointer;
             padding: 5px;
+            order: 3;
 
             &:hover {
                 border: 1px solid $black25;
@@ -149,6 +154,15 @@
                             }
                         }
                     }
+                }
+            }
+        }
+
+        .headerButtons {
+
+            .headerBtn {
+                &:last-child {
+                    display: none;
                 }
             }
         }

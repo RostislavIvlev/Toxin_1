@@ -46,6 +46,8 @@
 
     
 
-
-  +button({mods: "gradBorder", btnLabel: "Войти"})(style="height: 34px; margin-right: 20px")
-  +button({mods: "", btnLabel: "Зарегистрироваться"})(style="width: 196px; height: 34px;")
+  .headerButtons
+    .headerBtn
+      +button({mods: "gradBorder", btnLabel: "Войти"})(style="height: 34px; margin-right: 20px")
+    .headerBtn
+      +button({mods: "", btnLabel: "Зарегистрироваться"})(style="width: 196px; height: 34px;")
