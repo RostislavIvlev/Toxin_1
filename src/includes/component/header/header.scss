@@ -9,6 +9,7 @@
     padding-right: 10%;
     display: flex;
     align-items: center;
+    position: relative;
 
     &__logo {
         height: 39px;  //for vertical center
@@ -17,58 +18,137 @@
         cursor: pointer;
     }
 
+    .navBurger {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
 
-    .navWrapper {
-        display: flex;
-
-        .navElement {
-            @include fontSettings($montserratRegular, 14px, 24px, $black50);
-            margin-right: 20px;
-            outline: none;
-            text-decoration: none;
-            position: relative; 
-            
-            &_bold {
-                @include fontSettings($montserratBold, 14px, 24px, $black75);
-            }
-
-            .navHead {
-                display: flex;
-                cursor: pointer;
-                user-select: none;
-
-                &__arrow {
-                    @include size(24px);
-                    @include fontSettings($materialIcons, 24px, 24px, $black50);
-                    
+        .navWrapper {
+            display: flex;
+    
+            .navElement {
+                @include fontSettings($montserratRegular, 14px, 24px, $black50);
+                margin-right: 20px;
+                outline: none;
+                text-decoration: none;
+                position: relative; 
+                
+                &_bold {
+                    @include fontSettings($montserratBold, 14px, 24px, $black75);
+                }
+    
+                .navHead {
+                    display: flex;
+                    cursor: pointer;
+                    user-select: none;
+    
+                    &__arrow {
+                        @include size(24px);
+                        @include fontSettings($materialIcons, 24px, 24px, $black50);
+                        
+                        &_expanded {
+                            transform: rotate(180deg);
+                        }
+                    }
+                }
+    
+                .navContainer {
+                    display:  none;
+                    padding: 10px 20px 10px 20px;
+                    @include size(150px, auto);
+                    border: 1px solid $black05;
+                    border-bottom-left-radius: 6px;
+                    border-bottom-right-radius: 6px;
+                    background-color: #ffffff;
+                    position: absolute;
+                    top: 24px;
+                    right: 0px;
+                    z-index: 1;
+    
                     &_expanded {
-                        transform: rotate(180deg);
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-end;
+                    }
+    
+                    &__element {
+                        margin-top: 10px;
+                        text-decoration: none;
                     }
                 }
             }
+        }
+    }
 
-            .navContainer {
-                display:  none;
-                padding: 10px 20px 10px 20px;
-                @include size(150px, auto);
-                border: 1px solid $black05;
-                border-bottom-left-radius: 6px;
-                border-bottom-right-radius: 6px;
-                background-color: #ffffff;
-                position: absolute;
-                top: 24px;
-                right: 0px;
-                z-index: 1;
 
+
+    
+
+    @media screen and (max-width: 1100px) {
+        width: 100vw;
+        .navBurger {
+            position: relative;
+            cursor: pointer;
+            padding: 5px;
+
+            &:hover {
+                border: 1px solid $black25;
+                border-radius: 4px;
+                transition: 0.2s ease-in-out;
+                background-color: rgba(188,156,255, 0.1);
+            }
+
+            &:after {
+                content: "MENU";
+                @include fontSettings($montserratBold, 18px, 24px, $black50)
+            }
+
+            .navWrapper {
+                display: none;
+    
                 &_expanded {
                     display: flex;
                     flex-direction: column;
-                    align-items: flex-end;
+                    background-color: #FFFFFF;
+                    border: 1px solid $black25;
+                    border-radius: 4px;
+                    position: absolute;
+                    top: 50%;
+                    right: 100%;
+                    padding: 25px;
                 }
-
-                &__element {
+    
+                .navElement {
                     margin-top: 10px;
-                    text-decoration: none;
+
+                    &:first-child {
+                        margin-top: 0;
+                    }
+
+                    .navContainer {
+                        position: relative;
+                        margin: 0px;
+                        border: 0;
+                        width: 100%;
+                        height: fit-content;
+                        z-index: inherit;
+                        margin-top: 0;
+                        padding: 0;
+                        align-items: flex-start;
+
+                        &__element {
+                            margin-top: 10px;
+                            color: $black50;
+
+                            &:first-child {
+                                margin-top: -15px;
+                            }
+
+                            &:last-child {
+                                margin-bottom: 20px;
+                            }
+                        }
+                    }
                 }
             }
         }

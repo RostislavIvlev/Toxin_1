@@ -13,3 +13,16 @@ $(document).on("click", function(event) {
         $(".navHead__arrow").removeClass("navHead__arrow_expanded")
     }
 })
+
+$(".navBurger").on("click", function() {
+    $(this).children(".navWrapper").addClass("navWrapper_expanded")
+})
+
+$(document).on("click", function(event) {
+    var target = $(event.target);
+    var expanded = $(".navWrapper").hasClass("navWrapper_expanded");
+
+    if (!target.closest(".navBurger").is(".navBurger") && expanded === true) {
+        $(".navWrapper").removeClass("navWrapper_expanded");
+    }
+})
