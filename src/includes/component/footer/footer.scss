@@ -7,6 +7,7 @@
     padding-left: 10vw;
     padding-right: 10vw;
     box-sizing: border-box;
+    @include size(100%, 443px);
 
     .footerInfo {
         display: flex;
@@ -44,8 +45,7 @@
     }
 
     &__hr {
-        width: 100vw;
-        margin-left: -10vw;
+        width: 100%;
         margin-bottom: 0;
 
         border: none;
@@ -89,9 +89,13 @@
     }
 
     @media screen and (max-width: 1100px) {
-        width: 100vw;
+        width: 100%;
         padding-top: 30px;
         padding-bottom: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
 
         .footerInfo {
             padding-top: 0;

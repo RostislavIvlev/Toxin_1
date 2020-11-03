@@ -1,0 +1,42 @@
+@import "../main.scss";
+
+.mainPage {
+    background-image: url("../../images/bg.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    height: 830px;
+    width: 100%;
+
+    padding-top: 70px;
+    padding-left: 10vw;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+
+    &__label {
+        width: 300px;
+        @include fontSettings($montserratRegular, 14px, 24px, $black75);
+        text-align: right;
+        margin-left: auto;
+        margin-right: 134px;
+        margin-top: auto;
+        margin-bottom: 18px;
+
+    }
+
+    .cardHeader {
+        @include fontSettings($quicksandBold, 24px, 30px, $black);
+        margin-bottom: 20px;
+    }
+
+    .datesWrapper {
+        display: flex;
+
+        .date {
+            &:first-child {
+                margin-right: 20px;
+            }
+        }
+    }
+}
