@@ -1,6 +1,7 @@
 .mainPageBody {
-    width: 100vw;
+    max-width: 1600px;
+    margin-left: auto;
+    margin-right: auto;
     box-sizing: border-box;
-    overflow-x: hidden;
-    margin-right: calc(-1 * (100vw - 100%));    
+
 }
