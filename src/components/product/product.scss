@@ -1,0 +1,129 @@
+@import "../../scss/main.scss";
+
+.room-card {
+    margin-right: 12px;
+    margin-bottom: 21px;
+    @include size(270px, 257px);
+    box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+    border-radius: 4px;
+    background-color: transparent;
+
+    .image-section {
+        @include size(270px, 151px);
+        display: flex;
+        position: relative;
+        overflow: hidden;
+        
+        
+
+        &__image {
+            @include size(100%, 100%);
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+            position: absolute;
+            left: 0px;
+        }
+
+        .navigate {
+            @include size(42px, 151px);
+            background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
+            cursor: pointer;
+            
+            &_prev {
+                position: absolute;
+                left: 0px;
+                z-index: 3;
+                border-top-left-radius: 4px;
+            }
+
+            &_next {
+                position: absolute;
+                right: 0px;
+                z-index: 3;
+                transform: matrix(-1, 0, 0, 1, 0, 0);
+                border-top-left-radius: 4px;
+            }
+
+            &__arrow {
+                @include fontSettings($materialIcons, 24px, 169px, #fff);
+                margin-left: 1px;
+                transform: rotate(90deg);
+                
+            }
+        }
+
+        .paginator {
+            position: absolute;
+            right: 15px;
+            bottom: 15px;
+            display: flex;
+
+            &__ellipse {
+                @include size(7.5px);
+                border: 1px solid white;
+                border-radius: 50%;
+                box-sizing: border-box;
+                box-shadow: 0px 5px 5px rgba(31, 32, 65, 0.3);
+                z-index: 4;
+                margin-left: 3.75px;
+                cursor: pointer;
+
+                &_active {
+                    background-color: white;
+                }
+            }
+        }
+    }
+
+    .info-section {
+        padding: 20px 20px 8px 20px;
+
+        .info-block {
+            display: flex;
+            align-items: flex-end;
+            margin-bottom: 12px;
+
+            &__number-symbol {
+                @include fontSettings($quicksandBold, 14px, 20px, $black);
+            }
+
+            &__number {
+                @include fontSettings($quicksandBold, 19px, 22px, $black);
+                margin-right: 5px;
+                margin-left: 4px;
+            }
+
+            &__lux {
+                @include fontSettings($montserratBold, 12px, 15px, $addition);
+                text-transform: uppercase;
+            }
+
+            &__price {
+                @include fontSettings($montserratBold, 14px, 18px, $black50);
+                margin-left: auto;
+                margin-right: 5px;
+            }
+
+            &__time {
+                @include fontSettings($montserratRegular, 12px, 18px, $black50);
+            }
+             
+            &__comments-number {
+                @include fontSettings($montserratBold, 14px, 18px, $black50);
+                margin-left: auto;
+                margin-right: 4px;
+            }
+    
+            &__comments {
+                @include fontSettings($montserratRegular, 14px, 18px, $black50);
+            }
+        }
+
+        &__custom-hr {
+            width: 230px;
+            margin-left: 0px;
+            margin-bottom: 10px;
+            border: 0.5px solid rgba(31, 32, 65, 0.1);
+        }
+    }
+}

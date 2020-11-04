@@ -1,0 +1,107 @@
+extend ../templates/main/mainLayout
+
+block head
+  title Searching room
+
+block main
+
+  .searchingPage
+    aside
+      +componentBlock({name: "даты пребывания в отеле"})
+        +datepicker()#filterDatePicker(style="width: 266px" data-range="true" data-multiple-dates-separator=" - " placeholder= "ДД.ММ.ГГГГ")
+
+      +componentBlock({name: "гости"})(style="width: 266px")
+        +dropdown([
+          {
+            name: "Взрослые",
+            current: "0"
+          },
+          {
+            name: "Дети",
+            current: "1"
+          },
+          {
+            name: "Младенцы",
+            current: "2"
+          }
+        ], "Сколько гостей", true)
+
+      +componentBlock({name: "правила дома"})(style="margin-bottom: 40px;")
+        p
+        +checkbox({
+          formId: "checkbox1",
+          formName: "checkbox1",
+          label: "Можно курить",
+          mods: "checkbox"
+        })
+        +checkbox({
+          formId: "checkbox2",
+          formName: "checkbox2",
+          label: "Можно c питомцами",
+          mods: "checkbox"
+        })(checked)
+        +checkbox({
+          formId: "checkbox3",
+          formName: "checkbox3",
+          label: "Можно пригласить гостей (до 10 человек)",
+          mods: "checkbox"
+        })(checked)
+
+      +componentBlock({name: "доступность"})(style="margin-top: 20px")
+        +checkbox({
+            name: "Широкий коридор",
+            text: "Ширина коридоров в номере не менее 91 см.",
+            mods: "checkbox"
+        })
+        +checkbox({
+            name: "Помощник для инвалидов",
+            text: "На 1 этаже вас встретит специалист  и проводит до номера.",
+            mods: "checkbox"
+        })
+
+      +componentBlock({name: "удобства номера"})
+        +dropdown([
+          {
+            name: "Спальни",
+            current: "2"
+          },
+          {
+            name: "Кровати",
+            current: "2"
+          },
+          {
+            name: "Ванные комнаты",
+            current: "0"
+          }
+        ], "Сколько гостей", false)(style="width: 266px")
+
+      +expandableList("дополнительные удобства")
+        block content
+          +checkbox({label: "Завтрак", mods: "checkbox"})
+          +checkbox({label: "Письменный стол", mods: "checkbox"})(checked)
+          +checkbox({label: "Стул для кормления", mods: "checkbox"})(checked)
+          +checkbox({label: "Кроватка", mods: "checkbox"})(checked)
+          +checkbox({label: "Телевизор", mods: "checkbox"})(checked)
+          +checkbox({label: "Шампунь", mods: "checkbox"})
+
+    .resultWrapper
+      .resultWrapper__header Номера, которые мы для вас подобрали
+      .resultCards
+        -
+          var roomsArr = [{imageUrl: "assets/images/card1.png", number: "888", lux: true, price: "9 990", rating: 5, comments: 145},
+                          {imageUrl: "assets/images/card2.png", number: "840", price: "9 900", rating: 4, comments: 65},
+                          {imageUrl: "assets/images/card3.png", number: "980", lux: true, price: "8 500", rating: 3, comments: 35}, 
+                          {imageUrl: "assets/images/card4.png", number: "856", price: "7 300", rating: 5, comments: 19}, 
+                          {imageUrl: "assets/images/card5.png", number: "740", price: "6 000", rating: 4, comments: 44}, 
+                          {imageUrl: "assets/images/card6.png", number: "982", price: "5 800", rating: 3, comments: 56}, 
+                          {imageUrl: "assets/images/card7.png", number: "678", price: "5 500", rating: 5, comments: 45}, 
+                          {imageUrl: "assets/images/card8.png", number: "450", price: "5 300", rating: 4, comments: 39}, 
+                          {imageUrl: "assets/images/card9.png", number: "350", price: "5 000", rating: 3, comments: 77}, 
+                          {imageUrl: "assets/images/card10.png", number: "666", price: "5 000", rating: 5, comments: 25},  
+                          {imageUrl: "assets/images/card11.png", number: "444", price: "5 000", rating: 3, comments: 15}, 
+                          {imageUrl: "assets/images/card12.png", number: "352", price: "5 000", rating: 3, comments: 5}]
+        each val in roomsArr
+          +product(val)
+
+      .resultWrapper__pagination
+        +pagination(4, 1, 15, arrows, "1 – 12 из 100+ вариантов аренды")

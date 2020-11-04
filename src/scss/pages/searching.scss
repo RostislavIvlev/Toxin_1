@@ -1,0 +1,30 @@
+@import "../main.scss";
+
+.searchingPage {
+    display: flex;
+    padding: 30px 140px 30px 140px;
+
+    .resultWrapper {
+        display: flex;
+        flex-direction: column;
+        margin-left: auto;
+        margin-right: 0px;
+        
+        &__header {
+            @include fontSettings($quicksandBold, 24px, 30px, $black);
+            margin-bottom: 20px;
+        }
+
+        &__pagination {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .resultCards {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr;
+            
+        }
+    }
+}

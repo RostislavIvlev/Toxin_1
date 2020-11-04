@@ -1,0 +1,36 @@
+mixin product(options)
+  
+  
+  .room-card&attributes(attributes)
+    .image-section
+      .navigate.navigate_prev
+        .navigate__arrow expand_more
+      img.image-section__image(src= options.imageUrl)
+      .navigate.navigate_next
+        .navigate__arrow expand_more
+      
+      .paginator
+        .paginator__ellipse.paginator__ellipse_active
+        .paginator__ellipse
+        .paginator__ellipse
+        .paginator__ellipse
+
+    .info-section
+      .info-block
+        .info-block__number-symbol №
+        .info-block__number= options.number
+        if (options.lux === true)
+          .info-block__lux Люкс
+        .info-block__price= options.price + "₽"
+        .info-block__time в сутки
+
+      hr.info-section__custom-hr(size= "1")
+      
+      .info-block
+        +rating(options.rating)
+        .info-block__comments-number= options.comments
+        .info-block__comments Отзывов
+        
+
+        //{imageUrl: "img/card1", number: "888", lux: true, price: 9990, rating: 5, comments: 145},
+            {imageUrl: "img/card2", number: "840", price: 9900, rating: 4, comments: 65}
