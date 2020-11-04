@@ -65,3 +65,14 @@ $("[data-submit]").on("click", function() {
     $(this).closest(".dropdownWrapper").children(".dropdown").removeClass("dropdown_expanded");
     $(this).closest(".dropdownWrapper").children(".dropdownContent").removeClass("dropdownContent_expanded");
 })
+
+$(document).on("click", function(event) {
+    var target = $(event.target);
+    var expanded = $(".dropdown").hasClass("dropdown_expanded");
+
+    if (!target.closest(".dropdownWrapper").is(".dropdownWrapper") && expanded === true) {
+        $(".dropdownWrapper__arrow").removeClass("dropdownWrapper__arrow_expanded");
+        $(".dropdown").removeClass("dropdown_expanded");
+        $(".dropdownContent").removeClass("dropdownContent_expanded");
+    }
+})

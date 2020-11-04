@@ -10,7 +10,7 @@ block main
       +componentBlock({name: "даты пребывания в отеле"})
         +datepicker()#filterDatePicker(style="width: 266px" data-range="true" data-multiple-dates-separator=" - " placeholder= "ДД.ММ.ГГГГ")
 
-      +componentBlock({name: "гости"})(style="width: 266px")
+      +componentBlock({name: "гости"})
         +dropdown([
           {
             name: "Взрослые",
@@ -24,7 +24,7 @@ block main
             name: "Младенцы",
             current: "2"
           }
-        ], "Сколько гостей", true)
+        ], "Сколько гостей", true)(style="width: 266px")
 
       +componentBlock({name: "правила дома"})(style="margin-bottom: 40px;")
         p
