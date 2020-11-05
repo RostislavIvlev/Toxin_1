@@ -1,0 +1,20 @@
+@import "../main.scss";
+
+.loginHeader {
+    @include fontSettings($quicksandBold, 24px, 30px, $black);
+    margin-bottom: 20px;
+}
+
+.registrationLine {
+    display: flex;
+    flex-direction: row;
+
+    margin-top: 30px;
+    align-items: center;
+
+    &__text {
+        @include fontSettings($montserratRegular, 14px, 44px, $black);
+        margin-right: auto;
+        margin-left: 0;
+    }
+}

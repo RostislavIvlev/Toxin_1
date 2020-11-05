@@ -1,0 +1,21 @@
+extend ../templates/main/mainLayout.pug
+
+block head
+  title Login
+
+block main
+  .signWrapper
+    include ../includes/component/card/card
+      block cardContent
+        .loginHeader Войти
+        +input({placeholder: "Email"})
+        +input({placeholder: "Пароль"})(style="margin-top: 10px; margin-bottom: 20px;")
+        +button({mods: "",
+          btnLabel: "Войти",
+          arrow: true,
+          formName: "Login",
+          formId: "Login"
+        })(style="width: 320px")
+        .registrationLine
+          .registrationLine__text Нет аккаунта на Toxin?
+          +button({mods: "gradBorder", btnLabel: "Создать"})
