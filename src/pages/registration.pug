@@ -1,0 +1,50 @@
+extend ../templates/main/mainLayout.pug
+
+block head
+  title Login
+
+block main
+  .signWrapper
+    include ../includes/component/card/card
+      block cardContent
+        .signHeader Регистрация аккаунта
+        form(action="Registration")
+            +input({placeholder: "Имя"})
+            +input({placeholder: "Фамилия"})(style="margin-top: 10px; margin-bottom: 10px")
+            +radio([
+            {
+                radioTitle: "Мужчина",
+                inputAttr: {
+                name: "Пол",
+                checked: true,
+                }
+            },
+            {
+                radioTitle: "Женщина",
+                inputAttr: {
+                name: "Пол",
+                },
+                attr: {
+                style: "margin-left: 20px"
+                }
+            }
+            ])
+            +componentBlock({name: "Дата рождения"})(style="margin-top: 20px;")
+              +input({mods: "date", placeholder: "ДД.ММ.ГГГГ"})
+            +componentBlock({name: "данные для входа в сервис"})
+              +input({placeholder: "Email"})
+              +input({placeholder: "Пароль"})(style="margin-top: 10px; margin-bottom: 10px")
+              +checkbox({
+                    formId: "toggle",
+                    formName: "toggle",
+                    label: "Получать спецпредложения",
+                    mods: "toggle"
+              })
+            +button({mods: "",
+                btnLabel: "перейти к оплате",
+                arrow: true,
+                formName: "btn7",
+                formId: "btn7"})(style="width: 320px")
+            .signLine
+              .signLine__text Уже есть аккаунт на Toxin
+              +button({mods: "gradBorder", btnLabel: "Войти"})

@@ -7,7 +7,7 @@ block main
   .signWrapper
     include ../includes/component/card/card
       block cardContent
-        .loginHeader Войти
+        .signHeader Войти
         +input({placeholder: "Email"})
         +input({placeholder: "Пароль"})(style="margin-top: 10px; margin-bottom: 20px;")
         +button({mods: "",
@@ -16,6 +16,6 @@ block main
           formName: "Login",
           formId: "Login"
         })(style="width: 320px")
-        .registrationLine
-          .registrationLine__text Нет аккаунта на Toxin?
+        .signLine
+          .signLine__text Нет аккаунта на Toxin?
           +button({mods: "gradBorder", btnLabel: "Создать"})
