@@ -8,7 +8,7 @@ block main
     include ../includes/component/card/card
       block cardContent
         .signHeader Регистрация аккаунта
-        form(action="Registration")
+        form(action="" formId="Registration" formName="Registration")
             +input({placeholder: "Имя"})
             +input({placeholder: "Фамилия"})(style="margin-top: 10px; margin-bottom: 10px")
             +radio([
@@ -42,9 +42,7 @@ block main
               })
             +button({mods: "",
                 btnLabel: "перейти к оплате",
-                arrow: true,
-                formName: "btn7",
-                formId: "btn7"})(style="width: 320px")
+                arrow: true,})(style="width: 320px")
             .signLine
               .signLine__text Уже есть аккаунт на Toxin
               +button({mods: "gradBorder", btnLabel: "Войти"})

@@ -39,6 +39,7 @@
   },
   "dependencies": {
     "air-datepicker": "^2.2.3",
+    "chart.js": "^2.9.4",
     "clean-webpack-plugin": "^3.0.0",
     "ion-rangeslider": "^2.2.0",
     "jquery-bar-rating": "^1.2.2"

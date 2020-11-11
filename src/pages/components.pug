@@ -2,6 +2,8 @@ extend ../templates/devtools/devtools
 
 block head
   title Components
+  script
+    
 
 block main
   .componentsWrapper
@@ -212,3 +214,11 @@ block main
       })(src="./assets/images/test-user.png" alt="test user")
         block comment
           | Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.
+
+
+
+      canvas.doughnut#doughnut
+
+
+  script.
+    doughnut([130, 65, 65, 0])

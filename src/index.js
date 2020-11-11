@@ -5,8 +5,6 @@ let $ = require('jquery');
 import 'air-datepicker';
 import 'ion-rangeslider';
 
-
-
 import '../node_modules/inputmask/dist/jquery.inputmask.js';
 import '../node_modules/jquery-bar-rating/dist/jquery.barrating.min.js';
 import '../node_modules/jquery-bar-rating/dist/themes/css-stars.css';
@@ -15,9 +13,9 @@ import '../node_modules/air-datepicker/dist/css/datepicker.css';
 import '../node_modules/ion-rangeslider/css/ion.rangeSlider.min.css';
 import '../node_modules/ion-rangeslider/js/ion.rangeSlider.js';
 
-
 import './components/datepicker/datepicker';
 import './components/dropdown/dropdown';
+import './components/doughnut/doughnut'
 import './components/expand/expand';
 import './components/input/input';
 import './components/like/like';
