@@ -33,7 +33,7 @@ function doughnut(data) {
             if (data[i] == 0) {
                 context.arc(60, 60, 58, position[i], position[i], true);
             } else {
-                context.arc(60, 60, 58, position[i], position[i+1] + 0.0174533, true);
+                context.arc(60, 60, 58, position[i], position[i+1] + 0.05, true);
             }
             context.stroke();
         }
