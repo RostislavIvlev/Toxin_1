@@ -7,6 +7,6 @@ mixin comment(options)
         .info__lastOnline= options.lastOnline
     .commentBlock
       .commentBlock__like
-        +like({likeCount: options.likeCount, mode: "active"})
+        +like({likeCount: options.likeCount, mode: options.mode})
       .commentBlock__text
         block
