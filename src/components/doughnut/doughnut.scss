@@ -1,4 +1,70 @@
-.doughnut {
-    width: 120px;
-    height: 120px;
+@import "../../scss/main.scss";
+
+.doughnutContainer {
+    display: flex;
+    flex-direction: row;
+
+    .doughnutWrapper {
+        position: relative;
+
+        .doughnutCanvas {
+            @include size(120px)
+        }
+
+        &__score {
+            position: absolute;
+            top: 35px;
+            left: 35px;
+
+            width: 50px;
+            text-align: center;
+
+            display: flex;
+            flex-direction: column;
+
+            @include fontSettings($quicksandBold, 24px, 30px, $addition);
+
+            &:after {
+                content: "голосов";
+                @include fontSettings($montserratBold, 12px, 15px, $addition);
+                opacity: 0.2;
+            }
+        }
+    }
+
+    .doughnutTranscript {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        margin-left: 30px;
+
+        .transcriptLine {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            &__color {
+                @include size(10px);
+                border-radius: 50%;
+                margin-right: 5px;
+    
+                $colors: (
+                    0: #FFE39C,
+                    1: #6FCF97,
+                    2: #BC9CFF,
+                    3: #909090
+                );
+    
+                @each $status, $color in $colors {
+                    &_#{$status} {
+                        background: $color;
+                    }
+                }
+            }
+    
+            &__text {
+                @include fontSettings($montserratRegular, 14px, 24px, $black75);
+            }
+        }
+    }
 }
