@@ -1,0 +1,174 @@
+@import "../main.scss";
+
+.roomPage {
+
+    .imagesWrapper {
+        display: flex;
+        flex-direction: row;
+        height: 485px;
+
+        &__img {
+            @include size(1100px, 485px)
+        }
+
+        .imgColumn {
+            display: flex;
+            flex-direction: column;
+
+            &__img {
+                @include size(510px, 262px)
+            }
+        }
+    }
+
+    .roomWrapper {
+        padding: 70px 140px 10px 140px;
+        box-sizing: border-box;
+
+        display: flex;
+        flex-direction: row;
+
+        .aboutRoomWrapper {
+            width: 790px;
+
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+
+            .aboutRoom {
+                margin-right: 70px;
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 30px; 
+                
+                &:last-child {
+                    margin-bottom: 0;
+                }
+
+                &__header {
+                    @include fontSettings($quicksandBold, 19px, 24px, $black);
+                    margin-bottom: 20px;
+                }
+
+                &__text {
+                    @include fontSettings($montserratRegular, 14px, 24px, $black75);
+                    width: 341px
+                }
+
+            }
+        }
+
+        .roomCard {
+            margin-left: auto;
+            margin-right: 0;
+
+            .numberWrapper {
+                display: flex;
+                flex-direction: row;
+                align-items: flex-end;
+
+                &__symbol {
+                    @include fontSettings($quicksandBold, 14px, 30px, $black);
+                    margin-bottom: -4px;
+                    margin-right: 5px;
+                }
+
+                &__number {
+                    @include fontSettings($quicksandBold, 24px, 30px, $black);
+                    margin-right: 5px;
+                }
+
+                &__status {
+                    @include fontSettings($montserratRegular, 12px, 30px, $addition);
+                    margin-bottom: -4px;
+                }
+
+                .numberCost {
+                    margin-left: auto;
+                    margin-right: 0;
+                    display: flex;
+                    flex-direction: row;
+
+                    &__cost {
+                        @include fontSettings($montserratBold, 14px, 30px, $black50);
+                        margin-right: 5px;
+                    }
+
+                    &__time {
+                        @include fontSettings($montserratRegular, 12px, 30px, $black50);
+                    }
+                }
+            }
+
+            .dateWrapper {
+                display: flex;
+                flex-direction: row;
+
+                margin-top: 20px;
+            }
+
+            .roomCalculate {
+                margin-bottom: 20px;
+
+                .roomCost {
+                    display: flex;
+                    flex-direction: row;
+                    @include fontSettings($montserratRegular, 14px, 24px, $black75);
+
+                    &__text {
+                        margin-left: 0;
+                        width: 214px;
+                        margin-right: 5px;
+                    }
+
+                    &__result {
+                        margin-right: 0;
+                        margin-left: auto;
+                    }
+
+                    &__info {
+                        @include size(20px);
+                        border: 1px solid $black25;
+                        border-radius: 50%;
+                        box-sizing: border-box;
+                        position: relative;
+
+                        &::after {
+                            content: "i";
+                            @include fontSettings($montserratBold, 12px, 14px, $black25);
+                            position: absolute;
+                            top: 3px;
+                            left: 7px;
+                        }
+                    }
+                }
+            }
+
+            .roomResult {
+                display: flex;
+                flex-direction: row;
+                @include fontSettings($quicksandBold, 19px, 24px, $black);
+                position: relative;
+                margin-bottom: 25px;
+
+                &__text {
+                    margin-left: 0;
+                    margin-right: auto;
+                }
+
+                &__result {
+                    margin-right: 0;
+                    margin-left: auto;
+                }
+
+                &__hr {
+                    width: 182px;
+                    border-bottom: 2px dotted $black25;
+                    position: absolute;
+                    bottom: 5px;
+                    left: 62px
+                }
+            }
+        }
+    }
+}

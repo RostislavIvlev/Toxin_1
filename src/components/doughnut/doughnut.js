@@ -103,6 +103,3 @@ const { intersection } = require("lodash");
 
     }
 })(jQuery)
-
-
-var $doughnut = $(".doughnut").doughnut([130, 65, 65, 1]);
