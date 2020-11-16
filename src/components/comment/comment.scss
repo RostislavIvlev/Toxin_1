@@ -47,6 +47,12 @@
         &__text {
             max-width: 658px;
             @include fontSettings($montserratRegular, 14px, 24px, $black75);
+
+            @media screen and (max-width: 800px) {
+                max-width: 380px;
+            }
         }
     }
+
+
 }
