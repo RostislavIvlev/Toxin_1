@@ -32,14 +32,14 @@
             &_prev {
                 position: absolute;
                 left: 0px;
-                z-index: 3;
+                z-index: inherit;
                 border-top-left-radius: 4px;
             }
 
             &_next {
                 position: absolute;
                 right: 0px;
-                z-index: 3;
+                z-index: 0;
                 transform: matrix(-1, 0, 0, 1, 0, 0);
                 border-top-left-radius: 4px;
             }

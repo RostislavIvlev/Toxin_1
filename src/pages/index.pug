@@ -1,22 +1,37 @@
-<!DOCTYPE html>
-html(lang="en")
-    head
-        meta(charset="UTF-8")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title Test page
-    body(style="background-color: #FFE5B4; margin-top: 50px; margin-left: 5vw")
-      a(href="./colorstypes.html", style="color: blue; font-size: 18px;") ColorsTypes
-      p
-      a(href="./components.html", style="color: blue; font-size: 18px;") Components
-      p
-      a(href="./headers&footers.html", style="color: blue; font-size: 18px") Headers and footers
-      p
-      a(href="./main.html", style="color: blue; font-size: 18px") Main
-      p
-      a(href="./searching.html", style="color: blue; font-size: 18px") Searching
-      p
-      a(href="./login.html", style="color: blue; font-size: 18px") Login
-      p
-      a(href="./registration.html", style="color: blue; font-size: 18px") Registration
-      p
-      a(href="./room.html", style="color: blue; font-size: 18px") Room
+extend ../templates/main/mainLayout
+
+block head
+  title Main page
+
+block main
+  .mainPage
+    include ../includes/component/card/card
+      block cardContent
+        .cardHeader Найдем номера под ваши пожелания
+        .datesWrapper
+          +componentBlock({name: "Прибытие"})
+            +datepicker()#startDate(data-range="true" data-multiple-dates-separator=" - " placeholder= "ДД.ММ.ГГГГ")
+          +componentBlock({name: "Выезд"})(style="margin-left: 20px")
+            +datepicker()#endDate(data-range="true" data-multiple-dates-separator=" - " placeholder= "ДД.ММ.ГГГГ")
+
+        +componentBlock({name: "Гости"})
+          +dropdown([
+            {
+              name: "Взрослые",
+              current: "0"
+            },
+            {
+              name: "Дети",
+              current: "1"
+            },
+            {
+              name: "Младенцы",
+              current: "2"
+            }
+          ], "Сколько гостей", true)
+
+        +button({mods: "",
+          btnLabel: "подобрать номер",
+          arrow: true,})(style="width: 320px" onclick="window.location.href='./searching.html'")
+
+    .mainPage__label Лучшие номера для вашей работы, отдыха и просто вдохновения
