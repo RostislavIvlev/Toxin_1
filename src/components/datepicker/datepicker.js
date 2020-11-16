@@ -57,9 +57,9 @@ $("#filterDatePicker").datepicker({
         if(d.$datepicker.find('button').html() === undefined ) {
             d.$datepicker.append('<button type="button" class="datepicker--ready"> Применить </button>');
             d.$datepicker.find('button').click(function(event) {
-                d.hide(); //Should be save data in databank + hide
+                showDays();
             });
         }
     },
     clearButton: true,
-})
+});
