@@ -26,6 +26,8 @@ block main
           }
         ], "Сколько гостей", true)(style="width: 266px")
 
+      #priceslider(style="margin-bottom: 40px; width: 266px")
+
       +componentBlock({name: "правила дома"})(style="margin-bottom: 40px;")
         p
         +checkbox({
@@ -48,11 +50,12 @@ block main
         })(checked)
 
       +componentBlock({name: "доступность"})(style="margin-top: 20px")
+        p
         +checkbox({
             name: "Широкий коридор",
             text: "Ширина коридоров в номере не менее 91 см.",
             mods: "checkbox"
-        })
+        })(style="margin-top: 10px")
         +checkbox({
             name: "Помощник для инвалидов",
             text: "На 1 этаже вас встретит специалист  и проводит до номера.",
@@ -73,7 +76,7 @@ block main
             name: "Ванные комнаты",
             current: "0"
           }
-        ], "Сколько гостей", false)(style="width: 266px")
+        ], "Сколько гостей", false)(style="width: 266px; margin-top: 10px")
 
       +expandableList("дополнительные удобства")
         block content
@@ -83,8 +86,7 @@ block main
           +checkbox({label: "Кроватка", mods: "checkbox"})(checked)
           +checkbox({label: "Телевизор", mods: "checkbox"})(checked)
           +checkbox({label: "Шампунь", mods: "checkbox"})
-       
-      +button({mods: "gradBorder", btnLabel: "Перейти к комнате"})(style="height: 34px; margin-right: 20px" onclick="window.location.href='./room.html'")
+
     .resultWrapper
       .resultWrapper__header Номера, которые мы для вас подобрали
       .resultCards

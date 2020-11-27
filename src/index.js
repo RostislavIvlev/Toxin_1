@@ -10,8 +10,6 @@ import '../node_modules/jquery-bar-rating/dist/jquery.barrating.min.js';
 import '../node_modules/jquery-bar-rating/dist/themes/css-stars.css';
 import '../node_modules/air-datepicker/dist/js/datepicker';
 import '../node_modules/air-datepicker/dist/css/datepicker.css';
-import '../node_modules/ion-rangeslider/css/ion.rangeSlider.min.css';
-import '../node_modules/ion-rangeslider/js/ion.rangeSlider.js';
 
 import './components/datepicker/datepicker';
 import './components/dropdown/dropdown';
@@ -19,7 +17,7 @@ import './components/doughnut/doughnut'
 import './components/expand/expand';
 import './components/input/input';
 import './components/like/like';
-import './components/range-slider/range';
+import './components/range-slider/rangeslider';
 import './components/rating/rating';
 
 import './includes/component/header/header'

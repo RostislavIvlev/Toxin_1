@@ -1,0 +1,66 @@
+@import "../../scss/main.scss";
+
+.rsWrapper {
+    box-sizing: border-box;
+
+    .rsHeader {
+        display: flex;
+        margin-bottom: -5px;
+
+        .rsDisplay {
+            margin-bottom: 25px;
+            border-radius: 4px;
+
+            margin-left: auto;
+            margin-right: 0;
+            order: 2;
+
+            @include fontSettings($montserratRegular, 12px, 14px, $black50);
+        }
+    
+        .rsName {
+            @include fontSettings($montserratBold, 12px, 14px, $black);
+            margin-left: 0;
+            margin-right: auto;
+            text-transform: uppercase;
+        }
+
+    }
+
+    .rsAdditionText {
+        @include fontSettings($montserratRegular, 12px, 14px, $black50);
+        margin-top: 10px;
+    }
+
+    .rsBase {
+        background: #ffffff;
+        height: 6px;
+        box-sizing: border-box;
+        border: 1px solid rgba(31, 32, 65, 0.25);
+        border-radius: 3px;
+        position: relative;
+
+        .rsThumb {
+            width: 12px;
+            height: 12px;
+            position: absolute;
+            top: -4px;
+            cursor: pointer;
+
+            background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+            border: 2px solid #FFFFFF;
+            border-radius: 50%;
+            box-sizing: border-box;
+            z-index: 5;
+        }
+
+        .rsBetween {
+            position: absolute;
+            top: -1px;
+
+            height: 6px;
+            background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+            z-index: 1;
+        }
+    }
+};
